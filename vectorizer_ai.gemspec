@@ -26,14 +26,25 @@ Gem::Specification.new do |s|
   s.description = "Official Ruby SDK for the Vectorizer.AI image vectorization API."
   s.license     = "Apache-2.0"
   s.required_ruby_version = ">= 2.7"
-  s.metadata    = {}
+  s.metadata    = {
+    "source_code_uri" => "https://github.com/clv/vectorizer-ai-ruby",
+    "documentation_uri" => "https://vectorizer.ai/api/documentation",
+    "changelog_uri" => "https://github.com/clv/vectorizer-ai-ruby/releases",
+    "rubygems_mfa_required" => "true"
+  }
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
 
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
 
-  s.files         = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
-  s.test_files    = `find spec/*`.split("\n")
+  s.files         = [
+    "Gemfile",
+    "LICENSE",
+    "README.md",
+    "Rakefile",
+    "vectorizer_ai.gemspec"
+  ] + Dir.glob("docs/**/*.md") + Dir.glob("lib/**/*.rb")
+  s.test_files    = Dir.glob("spec/**/*.rb")
   s.executables   = []
   s.require_paths = ["lib"]
 end
