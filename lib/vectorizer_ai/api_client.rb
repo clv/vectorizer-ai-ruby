@@ -34,7 +34,6 @@ module VectorizerAI
       @config = config
       @user_agent = "OpenAPI-Generator/#{VERSION}/ruby"
       @default_headers = {
-        'Content-Type' => 'application/json',
         'User-Agent' => @user_agent
       }
     end
