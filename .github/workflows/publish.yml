@@ -21,6 +21,15 @@ jobs:
           ruby-version: "3.2"
           bundler-cache: true
 
+      - name: Verify tag version
+        run: |
+          tag_version="${GITHUB_REF_NAME#v}"
+          package_version="$(ruby -Ilib -rvectorizer_ai/version -e 'print VectorizerAI::VERSION')"
+          if [ "$package_version" != "$tag_version" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match package version $package_version"
+            exit 1
+          fi
+
       - name: Build gem
         run: bundle exec rake build
 
