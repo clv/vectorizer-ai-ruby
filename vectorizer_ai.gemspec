@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://vectorizer.ai/api/documentation"
   s.summary     = "Vectorizer.AI API SDK"
   s.description = "Official Ruby SDK for the Vectorizer.AI image vectorization API."
-  s.license     = "Unlicense"
+  s.license     = "Apache-2.0"
   s.required_ruby_version = ">= 2.7"
   s.metadata    = {}
 
